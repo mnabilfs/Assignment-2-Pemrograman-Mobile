@@ -28,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: double.infinity,
                     decoration: const BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage('assets/images/bioskop_fix.jpg'),
+                        image: AssetImage('assets/images/theater_pic.jpg'),
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -41,16 +41,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         end: Alignment.bottomCenter,
                         colors: [
                           Colors.transparent,
-                          Colors.black.withOpacity(0.4), 
-                          Colors.black.withOpacity(
-                            0.8,
-                          ),
+                          Colors.black.withOpacity(0.4),
+                          Colors.black.withOpacity(0.8),
                         ],
-                        stops: const [
-                          0.6,
-                          0.8,
-                          1.0,
-                        ], 
+                        stops: const [0.6, 0.8, 1.0],
                       ),
                     ),
                   ),
@@ -216,31 +210,46 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                       width: double.infinity,
                       height: 50,
-                      child: OutlinedButton.icon(
+                      child: OutlinedButton(
                         onPressed: () {},
-                        icon: SvgPicture.network(
-                          'https://cdn.cdnlogo.com/logos/g/35/google-icon.svg',
-                          height: 14,
-                          placeholderBuilder: (BuildContext context) =>
-                              Container(
-                                height: 10,
-                                width: 10,
-                                padding: const EdgeInsets.all(2.0),
-                                child: const CircularProgressIndicator(
-                                  color: Colors.white,
-                                  strokeWidth: 2,
-                                ),
-                              ),
-                        ),
-                        label: const Text(
-                          'Login With Google',
-                          style: TextStyle(color: Colors.white),
-                        ),
                         style: OutlinedButton.styleFrom(
                           side: const BorderSide(color: Colors.white54),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
+                          padding:
+                              EdgeInsets.zero, 
+                        ),
+                        child: Row(
+                          children: [
+                            const SizedBox(width: 16), 
+                            SvgPicture.network(
+                              'https://cdn.cdnlogo.com/logos/g/35/google-icon.svg',
+                              height: 20,
+                              width: 20,
+                              placeholderBuilder: (BuildContext context) =>
+                                  Container(
+                                    height: 20,
+                                    width: 20,
+                                    padding: const EdgeInsets.all(2.0),
+                                    child: const CircularProgressIndicator(
+                                      color: Colors.white,
+                                      strokeWidth: 2,
+                                    ),
+                                  ),
+                            ),
+                            Expanded(
+                              child: const Text(
+                                'Login With Google',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 36),
+                          ],
                         ),
                       ),
                     ),
@@ -248,18 +257,36 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                       width: double.infinity,
                       height: 50,
-                      child: OutlinedButton.icon(
+                      child: OutlinedButton(
                         onPressed: () {},
-                        icon: const Icon(Icons.facebook, color: Colors.blue),
-                        label: const Text(
-                          'Login with Facebook',
-                          style: TextStyle(color: Colors.white),
-                        ),
                         style: OutlinedButton.styleFrom(
                           side: const BorderSide(color: Colors.white54),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
+                          padding:
+                              EdgeInsets.zero, 
+                        ),
+                        child: Row(
+                          children: [
+                            const SizedBox(width: 16),
+                            const Icon(
+                              Icons.facebook,
+                              color: Colors.blue,
+                              size: 24,
+                            ),
+                            Expanded(
+                              child: const Text(
+                                'Login with Facebook',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 40),
+                          ],
                         ),
                       ),
                     ),

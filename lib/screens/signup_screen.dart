@@ -43,7 +43,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     width: double.infinity,
                     decoration: const BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage('assets/images/bioskop_fix.jpg'),
+                        image: AssetImage('assets/images/theater_pic.jpg'),
                         fit: BoxFit.cover,
                       ),
                     ),
